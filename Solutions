@@ -1,0 +1,6 @@
+#1108: Defanging an IP Address    
+#28ms runtime, 12.8 MB, in python3
+
+class Solution:
+    def defangIPaddr(self, address: str) -> str:
+        return address.replace(".", "[.]", 3)

@@ -1,6 +1,92 @@
-#1108: Defanging an IP Address    
-#28ms runtime, 12.8 MB, in python3
+1108: Defanging an IP Address    
+28ms runtime, 12.8 MB, in python3
 
 class Solution:
     def defangIPaddr(self, address: str) -> str:
         return address.replace(".", "[.]", 3)
+
+
+
+1281: Subtract the Product and Sum of Digits of an Integer
+0ms runtime, 26 MP, in java
+
+class Solution {
+    public int subtractProductAndSum(int n) {
+        int sum = 0;
+        int product = 1;
+        
+        String number = String.valueOf(n);
+        char[] digit = number.toCharArray();
+        
+        for(int i = 0; i<digit.length; i++){
+            product *= Character.getNumericValue(digit[i]); 
+            sum += Character.getNumericValue(digit[i]);
+        }
+        
+        return product - sum;
+    }
+}
+
+
+
+1295: Find Numbers with Even Number of Digits
+1ms runtime, 39 MB, in java
+
+class Solution {
+    public int findNumbers(int[] nums) {
+        int count =0;
+        for(int i = 0; i<nums.length; i++){
+            if(String.valueOf(nums[i]).length() % 2 == 0){
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
+
+
+771: Jewels and Stones
+1ms runtime, 36.2 MB, in java
+
+class Solution {
+    public int numJewelsInStones(String J, String S) {
+        int count = 0;
+        
+        char[] jewel = J.toCharArray();
+        char[] stone = S.toCharArray();
+        
+        for(int i=0; i<jewel.length; i++){
+            for(int j=0; j<stone.length; j++){                
+                Character tempJewel = new Character(jewel[i]);
+                Character tempStone = new Character(stone[j]);
+                
+                if(tempJewel.equals(tempStone)){
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+}
+
+
+
+709: To Lower Case
+0ms runtime, 40.9 MB, in java
+
+class Solution {
+    public String toLowerCase(String str) {
+        return str.toLowerCase();
+    }
+}
+
+
+
+595: Big Countries
+486ms runtime, 0 MB, in mysql
+
+SELECT name, population, area 
+FROM World
+WHERE population>25000000 OR area>3000000;
+
